@@ -41,7 +41,8 @@ install_requires.extend([
     "anyjson",
     "carrot>=0.10.5",
     "pyparsing",
-    "timer2"])
+    "timer2",
+    "threadpool"])
 
 py_version = sys.version_info
 if sys.version_info < (2, 6):
