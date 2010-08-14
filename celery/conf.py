@@ -53,7 +53,7 @@ _DEFAULTS = {
     "CELERYD_POOL_PUTLOCKS": True,
     "CELERYD_POOL": "celery.concurrency.processes.TaskPool",
     "CELERYD_MEDIATOR": "celery.worker.controllers.Mediator",
-    "CELERYD_ETA_SCHEDULER": "celery.worker.controllers.ScheduleController",
+    "CELERYD_ETA_SCHEDULER": "celery.utils.timer2.Timer",
     "CELERYD_LISTENER": "celery.worker.listener.CarrotListener",
     "CELERYD_CONCURRENCY": 0, # defaults to cpu count
     "CELERYD_PREFETCH_MULTIPLIER": 4,
@@ -62,6 +62,7 @@ _DEFAULTS = {
     "CELERYD_LOG_COLOR": False,
     "CELERYD_LOG_LEVEL": "WARN",
     "CELERYD_LOG_FILE": None, # stderr
+    "CELERYBEAT_SCHEDULE": {},
     "CELERYD_STATE_DB": None,
     "CELERYD_ETA_SCHEDULER_PRECISION": 1,
     "CELERYBEAT_SCHEDULE_FILENAME": "celerybeat-schedule",
@@ -239,6 +240,7 @@ RESULT_PERSISTENT = _get("CELERY_RESULT_PERSISTENT")
 # :--- Celery Beat                                  <-   --   --- - ----- -- #
 CELERYBEAT_LOG_LEVEL = _get("CELERYBEAT_LOG_LEVEL")
 CELERYBEAT_LOG_FILE = _get("CELERYBEAT_LOG_FILE")
+CELERYBEAT_SCHEDULE = _get("CELERYBEAT_SCHEDULE")
 CELERYBEAT_SCHEDULE_FILENAME = _get("CELERYBEAT_SCHEDULE_FILENAME")
 CELERYBEAT_MAX_LOOP_INTERVAL = _get("CELERYBEAT_MAX_LOOP_INTERVAL")
 

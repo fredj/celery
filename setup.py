@@ -41,7 +41,7 @@ install_requires.extend([
     "anyjson",
     "carrot>=0.10.5",
     "pyparsing",
-    "timer2"])
+])
 
 py_version = sys.version_info
 if sys.version_info < (2, 6):
@@ -92,7 +92,6 @@ setup(
     entry_points={
         'console_scripts': [
             'celeryd = celery.bin.celeryd:main',
-            'celeryinit = celery.bin.celeryinit:main',
             'celerybeat = celery.bin.celerybeat:main',
             'camqadm = celery.bin.camqadm:main',
             'celeryev = celery.bin.celeryev:main',
